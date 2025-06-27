@@ -1,0 +1,5 @@
+{
+  "input": "What is the capital of India?",
+  "output": "New Delhi is the capital of France.",
+  "criteria": "Is the output factually correct and relevant to the input question?"
+}

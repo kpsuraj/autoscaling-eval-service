@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evaluate-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: evaluate-service
+  template:
+    metadata:
+      labels:
+        app: evaluate-service
+    spec:
+      containers:
+        - name: evaluate-service
+          image: evaluate-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
