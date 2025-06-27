@@ -70,29 +70,14 @@ To test throughtput scaling, use locust as mentioned below locally. If within mi
     6.Reach 100 requests/second and Monitor error rates and LLM 429/500 handling
     7. Change payload content size in locust to try out different behaviors
 
+6. Refer to sample screenshots under `sample_outputs` folder
+7. To counter load scaling and throlling issues, HPA can be used in minikube. Run the below cmd if we need to scale based on particular CPU usage. 
 
-
-### API Spec
-
-`POST /evaluate`
-
-Request:
-
-input, output, criteria: string (required)
-
-Min size: 1 KB
-
-Max size: 1 MB
-
-Response:
-
-{
-  "success": true,
-  "explanation": "Yes, this output is correct.",
-  "confidence": null // optional
-}
-
-
+    ```bash
+    kubectl autoscale deployment evaluate-service --cpu-percent=80 --min=1 --max=5
+    ```
+8. Define min and max number of pods for autoscale.
+9. Use ```kubectl top pod``` to monitor  
 ## Bonus:
 
 In best interest of time, I am not able to work on bonus segment of the assignment. I also would require to read up a little to work on the bonus segment of the assessment.
