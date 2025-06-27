@@ -24,6 +24,14 @@ Sends evaluation prompt to LLM
 
 input, output, criteria: string (required)
 
+Request:
+
+{
+  "input": "string",
+  "output": "string",
+  "criteria": "string"
+}
+
 Min size: 1 KB
 
 Max size: 1 MB
@@ -38,14 +46,14 @@ Response:
 
 ## Error Handling
 
-Error                     Status    Response            
+Error                                           Status                                                      Response            
 
-Payload too small (<1KB)    411      Validation error    
-Payload too large (>1MB)    413      Validation error    
-LLM rate-limited (429)      502      Try again later     
-Invalid LLM response        500      Error explanation   
-Missing input fields        422      Validation response 
-Quota exhausted             402      Error explanation
+Payload too small (<1KB)                        411                                                     Validation error    
+Payload too large (>1MB)                        413                                                      Validation error    
+LLM rate-limited (429)                          502                                                      Try again later     
+Invalid LLM response                            500                                                      Error explanation   
+Missing input fields                            422                                                      Validation response 
+Quota exhausted                                 402                                                      Error explanation
 
 ## Trade-offs
 

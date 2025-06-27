@@ -77,7 +77,9 @@ To test throughtput scaling, use locust as mentioned below locally. If within mi
     kubectl autoscale deployment evaluate-service --cpu-percent=80 --min=1 --max=5
     ```
 8. Define min and max number of pods for autoscale.
-9. Use ```kubectl top pod``` to monitor  
+9. Use ```kubectl top pod``` to monitor 
+
+
 ## Bonus:
 
 In best interest of time, I am not able to work on bonus segment of the assignment. I also would require to read up a little to work on the bonus segment of the assessment.
